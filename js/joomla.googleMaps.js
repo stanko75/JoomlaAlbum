@@ -76,4 +76,4 @@
 
     ns.GoogleMaps = GoogleMaps;
 
-}(window.SM));
+}(window.joomla));

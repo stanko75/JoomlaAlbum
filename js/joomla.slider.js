@@ -1,7 +1,7 @@
 /*global jQuery, document, setInterval*/
-(function () {
+(function (ns) {
     "use strict";
-    jQuery.getJSON("Download/googleMaps/js/files.json", function (data) {
+    jQuery.getJSON("js/files.json", function (data) {
         data.forEach(function (file, index) {
             jQuery("#milosevImagesTrack").append('<img src="' + file + '" class="milosev">');
         });
@@ -10,7 +10,7 @@
             jQuery(".milosev").eq(0).remove();
             jQuery(".milosev").eq(2).css("border", "14px solid #333");
             jQuery(".milosev").eq(1).css("border", "");
-            Visualize
+            ns.Visualize
         }, 500);
     });
-}());
+}(window.joomla));
