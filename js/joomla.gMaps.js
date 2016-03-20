@@ -1,4 +1,4 @@
-/*global google*/
+/*global google, document*/
 (function (){
     "use strict";
 
