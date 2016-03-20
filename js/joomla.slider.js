@@ -1,6 +1,13 @@
 /*global jQuery, document, setInterval, window*/
 (function (ns) {
     "use strict";
+    var readEXIFdataCallback,
+        googleMapsCallback;
+
+    readEXIFdataCallback = new ns.ReadEXIFdata();
+
+    googleMapsCallback = new ns.GoogleMaps();
+
     jQuery.getJSON("js/files.json", function (data) {
         data.forEach(function (file) {
             jQuery("#milosevImagesTrack").append('<img src="' + file + '" class="milosev">');
@@ -15,3 +22,4 @@
         }, 500);
     });
 }(window.joomla));
+//@ sourceURL=joomla.slider.js

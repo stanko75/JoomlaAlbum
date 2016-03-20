@@ -1,5 +1,5 @@
-/*global google, document*/
-(function (){
+/*global google, document, window*/
+(function (ns){
     "use strict";
 
     var mapOptions,
@@ -18,4 +18,4 @@
         map = new google.maps.Map(mapCanvas, mapOptions);
     }
 
-}());
+}(window.joomla));

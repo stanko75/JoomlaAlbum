@@ -63,9 +63,9 @@
             map = new google.maps.Map(mapCanvas, mapOptions);
         }
 
-        google.maps.event.addListener(map, "mousedown", ns.Global.SettingsWindow.mouseDownHandler);
+        //google.maps.event.addListener(map, "mousedown", ns.Global.SettingsWindow.mouseDownHandler);
 
-        google.maps.event.addListener(map, "mouseup", ns.Global.SettingsWindow.mouseUpHandler);
+        //google.maps.event.addListener(map, "mouseup", ns.Global.SettingsWindow.mouseUpHandler);
 
         return {
             setMarker: setMarker,
@@ -77,3 +77,4 @@
     ns.GoogleMaps = GoogleMaps;
 
 }(window.joomla));
+//@ sourceURL=joomla.googleMaps.js

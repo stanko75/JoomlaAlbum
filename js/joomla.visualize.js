@@ -26,4 +26,4 @@
     }
 
     ns.Visualize = Visualize;
-}(window.SM));
+}(window.joomla));
