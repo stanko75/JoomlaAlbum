@@ -51,7 +51,7 @@
             mapCanvas;
 
         mapOptions = {
-            zoom: 6,
+            zoom: 15,
             center: { lat: -34.397, lng: 150.644},
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
