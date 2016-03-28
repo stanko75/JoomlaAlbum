@@ -18,7 +18,7 @@
             clsMilosev.eq(0).remove();
             clsMilosev.eq(2).css("border", "14px solid #333");
             clsMilosev.eq(1).css("border", "");
-            ns.Visualize(clsMilosev.eq(2), readEXIFdataCallback.readImage, googleMapsCallback.setMarker);
+            ns.Visualize(clsMilosev.eq(2)[0].src, readEXIFdataCallback.readImage, googleMapsCallback.setMarker);
         }, 500);
     });
 }(window.joomla));
