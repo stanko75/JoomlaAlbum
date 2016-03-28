@@ -44,7 +44,6 @@
         map.setCenter(marker[marker.length - 1].getPosition());
 
         google.maps.event.addListener(marker[marker.length - 1], 'click', clickMarkerHandler);
-        ns.PreloadProgress();
     }
 
     function GoogleMaps() {
