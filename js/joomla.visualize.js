@@ -8,7 +8,7 @@
 
             image.src = URL.createObjectURL(xhr.response);
             image.onload = function () {
-                readEXIFcallback(image, googleMapsCallback);
+                readEXIFcallback(image, googleMapsCallback, xhr.responseURL);
             };
         } else {
             console.log("error");

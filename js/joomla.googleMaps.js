@@ -3,9 +3,6 @@
     "use strict";
     var marker = [],
         map;
-    function clickMarkerHandler() {
-        window.open("http://www.milosev.com", "_blank");
-    }
 
     function convertDMSToDD(degrees, minutes, seconds, direction) {
         var dd = degrees + minutes / 60 + seconds / (60 * 60);
@@ -16,10 +13,14 @@
         return dd;
     }
 
-    function setMarker(gpsPositionOfPicture) {
+    function setMarker(gpsPositionOfPicture, url) {
         var gLat,
             gLon,
             myLatlng;
+
+        function clickMarkerHandler() {
+            window.open(url, "_blank");
+        }
 
         gLat = convertDMSToDD(gpsPositionOfPicture.latDegree,
                 gpsPositionOfPicture.latMinute,

@@ -2,7 +2,7 @@
 (function (ns) {
     "use strict";
 
-	function readImage(image, googleMapsCallback) {
+	function readImage(image, googleMapsCallback, url) {
 		var latDegree,
 		latMinute,
 		latSecond,
@@ -40,7 +40,7 @@
 				lonSecond: lonSecond,
 				lonDirection: lonDirection
 			};
-			googleMapsCallback(gpsPositionOfPicture);
+			googleMapsCallback(gpsPositionOfPicture, url);
 			} catch (e) {
 				jQuery('#log').append(e.message);
 				console.log(e.message);
