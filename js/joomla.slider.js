@@ -19,8 +19,8 @@
         ns.Visualize(clsMilosev.eq(2)[0].src, readEXIFdataCallback.readImage, googleMapsCallback.setMarker);
     }
 
-    function intervalManager(doAnimate) {
-        if (doAnimate) {
+    function intervalManager(startInterval) {
+        if (startInterval) {
             intervalHandler = setInterval(animateImagesTrack, 500);
         } else {
             clearInterval(intervalHandler);
