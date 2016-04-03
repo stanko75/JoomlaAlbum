@@ -3,7 +3,8 @@
     "use strict";
     var readEXIFdataCallback,
         googleMapsCallback,
-        intervalHandler;
+        intervalHandler,
+        milosevImagesTrackSelector = jQuery("#milosevImagesTrack");
 
     readEXIFdataCallback = new ns.ReadEXIFdata();
 
@@ -11,7 +12,7 @@
 
     function animateImagesTrack() {
         var clsMilosev = jQuery(".milosev");
-        jQuery("#milosevImagesTrack").append('<img src="' + clsMilosev[0].src + '" class="milosev">');
+        milosevImagesTrackSelector.append('<img src="' + clsMilosev[0].src + '" class="milosev">');
         clsMilosev.eq(0).remove();
         clsMilosev.eq(2).css("border", "14px solid #333");
         clsMilosev.eq(1).css("border", "");
@@ -33,11 +34,11 @@
         intervalManager(true);
     });
 
-    jQuery("#milosevImagesTrack").mouseenter(function () {
+    milosevImagesTrackSelector.mouseenter(function () {
         intervalManager(false);
     });
 
-    jQuery("#milosevImagesTrack").mouseleave(function () {
+    milosevImagesTrackSelector.mouseleave(function () {
         intervalManager(true);
     });
 
