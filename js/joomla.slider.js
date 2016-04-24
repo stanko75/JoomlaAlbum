@@ -16,7 +16,6 @@
         clsMilosev.eq(0).remove();
         clsMilosev.eq(2).css("border", "14px solid #333");
         clsMilosev.eq(1).css("border", "");
-        ns.Visualize(clsMilosev.eq(2)[0].src, readEXIFdataCallback.readImage, googleMapsCallback.setMarker);
     }
 
     function intervalManager(startInterval) {
@@ -28,9 +27,12 @@
     }
 
     jQuery.getJSON("js/files.json", function (data) {
+
         data.forEach(function (file) {
             jQuery("#milosevImagesTrack").append('<img src="' + file + '" class="milosev">');
+            ns.Visualize(file, readEXIFdataCallback.readImage, googleMapsCallback.setMarker);
         });
+
         intervalManager(true);
     });
 

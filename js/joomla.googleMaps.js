@@ -1,7 +1,7 @@
 /*global window, google, document*/
 (function (ns) {
     "use strict";
-    var marker = [],
+    var markers = [],
         map;
 
     function convertDMSToDD(degrees, minutes, seconds, direction) {
@@ -16,7 +16,9 @@
     function setMarker(gpsPositionOfPicture, url) {
         var gLat,
             gLon,
-            myLatlng;
+            myLatlng,
+            bounds,
+            i;
 
         function clickMarkerHandler() {
             window.open(url, "_blank");
@@ -36,15 +38,22 @@
 
         myLatlng = new google.maps.LatLng(gLat, gLon);
 
-        marker.push(new google.maps.Marker({
+        markers.push(new google.maps.Marker({
             position: myLatlng,
             map: map,
             title: 'Hello World!'
         }));
 
-        map.setCenter(marker[marker.length - 1].getPosition());
+        map.setCenter(markers[markers.length - 1].getPosition());
 
-        google.maps.event.addListener(marker[marker.length - 1], 'click', clickMarkerHandler);
+        bounds = new google.maps.LatLngBounds();
+        for (i = 0; i < markers.length; i = i + 1) {
+            bounds.extend(markers[i].getPosition());
+        }
+
+        map.fitBounds(bounds);
+
+        google.maps.event.addListener(markers[markers.length - 1], 'click', clickMarkerHandler);
     }
 
     function GoogleMaps() {
@@ -70,7 +79,7 @@
         return {
             setMarker: setMarker,
             map: map,
-            marker: marker
+            markers: markers
         };
     }
 
